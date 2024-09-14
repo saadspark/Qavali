@@ -1,0 +1,383 @@
+/* Overall Audio Player Container */
+.audio-player {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: relative;
+  background-color: #f8f8f8;
+}
+
+/* Track List Styling */
+.track-list-container {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-bottom: 150px;
+  padding: 20px;
+}
+
+.track-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+}
+
+.track-item:hover {
+  background-color: #f0f0f0;
+}
+
+.track-image img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.track-info {
+  flex-grow: 1;
+  padding-left: 15px;
+}
+
+.play-btn {
+  background-color: #5400BC;
+  color: #fff;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.play-btn:hover {
+  background-color: #7b00e3;
+}
+
+/* Now Playing Bar */
+.now-playing {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  padding: 20px 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 -4px 10px rgba(123, 0, 227, 0.5);
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.4s ease-in-out; /* Smooth animation */
+}
+
+
+.now-playing-image img {
+  width: 90px;
+  height: 90px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.now-playing-info {
+  flex-grow: 1;
+  padding-left: 20px;
+}
+
+.now-playing-info h3 {
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.progress-bar {
+  flex-grow: 1;
+  background-color: #e0e0e0;
+  height: 8px;
+  border-radius: 8px;
+  margin: 0 10px;
+  position: relative;
+}
+
+.progress {
+  background-color: #5400BC;
+  height: 100%;
+  width: 0;
+  border-radius: 8px;
+  transition: width 0.3s ease-in-out;
+}
+
+.time-info {
+  width: 90px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #666;
+  margin-right: 30px;
+}
+
+/* Control Buttons */
+.now-playing-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.control-btn {
+  background: linear-gradient(135deg, #5400BC, #7b00e3);
+  border: none;
+  padding: 12px 16px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.control-btn:hover {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #7b00e3, #9b00ff);
+}
+
+/* Volume Slider */
+.volume-slider {
+  width: 130px;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 8px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background-color: #5400BC;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Responsiveness for smaller screens */
+@media screen and (max-width: 768px) {
+  .now-playing {
+    padding: 10px 15px;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .now-playing-image img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .now-playing-info {
+    padding-left: 10px;
+  }
+
+  .now-playing-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+  }
+
+  .progress-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .progress-bar {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .now-playing-controls {
+    flex-direction: row;
+    margin-top: 10px;
+  }
+
+  .control-btn {
+    padding: 10px 12px;
+    font-size: 1rem;
+  }
+
+  .volume-slider {
+    width: 100px;
+  }
+}
+
+/* Mobile design tweaks (below 480px) */
+@media screen and (max-width: 480px) {
+  .now-playing {
+    padding: 8px;
+    flex-direction: column;
+    padding-bottom: 20px;
+  }
+
+  .now-playing-image img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .now-playing-info {
+    padding-left: 5px;
+  }
+
+  .now-playing-info h3 {
+    font-size: 0.9rem;
+  }
+
+  .progress-container {
+    width: 100%;
+    flex-direction: column;
+    margin: 5px 0;
+  }
+
+  .now-playing-controls {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .control-btn {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+  .volume-slider {
+    width: 80px;
+  }
+}
+
+
+/* Position the toggle button on the left side of Now Playing */
+/* .toggle-now-playing-btn {
+  background-color: transparent; 
+  color: #5400bc;
+  border: none;
+  font-size: 2rem; 
+  cursor: pointer;
+  position: fixed;
+  right: 10px;
+  bottom: 20px;
+  z-index: 15;
+  transition: transform 0.3s, color 0.3s;
+} */
+
+.toggle-now-playing-btn {
+  background-color: #fff;
+  height: 50px;
+  color: #5400bc;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  position: fixed;
+  right: -6px;
+  bottom: 20px;
+  z-index: 15;
+  transition: transform 0.3s, color 0.3s;
+  top: 81.8%;
+  box-shadow: 0 4px 10px rgba(84, 0, 188, 0.5);
+}
+
+button.toggle-now-playing-btn.now-playing-right {
+  transform: translateX(-83.1rem);
+    border-top-right-radius: 44px;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 44px;
+}
+
+button.toggle-now-playing-btn.now-playing-left {
+  border-top-left-radius: 35px;
+  border-bottom-left-radius: 35px;
+}
+.toggle-now-playing-btn:hover {
+  color: #7b00e3; /* Darker purple on hover */
+}
+
+.toggle-now-playing-btn:active {
+  transform: scale(0.95); /* Slightly shrink on click */
+}
+/* Hide and Show Now Playing container */
+.now-playing.hidden {
+  transform: translateX(-90%); /* Move the bar out of view */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.now-playing.visible {
+  transform: translateX(0);
+}
+
+.now-playing.hidden .now-playing-info,
+.now-playing.hidden .now-playing-controls {
+  display: none; /* Hide everything except the image */
+}
+
+.now-playing.hidden .now-playing-image {
+  display: flex;
+  justify-content: center;
+  position: relative; /* Position relative to place wave animation under */
+  margin-left: 92%;
+}
+
+.now-playing.hidden .now-playing-image img {
+  margin-left: 0;
+  width: 85px;
+  height: 86px;
+  border-radius: 15%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Wave Animation under song image when hidden */
+.now-playing.hidden .wave-animation {
+  position: absolute;
+  bottom: -10px; /* Place wave lines just below the image */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.now-playing.hidden .wave-animation span {
+  display: block;
+  width: 5px;
+  height: 10px;
+  margin: 0 2px;
+  background: #5400BC;
+  border-radius: 50%;
+  animation: wave 1s infinite ease-in-out;
+}
+
+.now-playing.hidden .wave-animation span:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.now-playing.hidden .wave-animation span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.now-playing.hidden .wave-animation span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.5);
+  }
+}
