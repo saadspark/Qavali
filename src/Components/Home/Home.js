@@ -28,9 +28,9 @@ import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel";
 
 import thumbnail1 from "../../Images/thumbnail1.jpg";
-import thumbnail2 from "../../Images/thumbnail2.png";
-import thumbnail3 from "../../Images/thumbnail3.png";
-import thumbnail4 from "../../Images/thumbnail4.png";
+import thumbnail2 from "../../Images/thumbnail2.jpg";
+import thumbnail3 from "../../Images/thumbnail3.jpg";
+import thumbnail4 from "../../Images/thumbnail4.jpg";
 import AudioPlayer from "../AudioPlayer/AudioPlayer";
 import songImg1 from "../../Images/song1.jpg";
 import songImg2 from "../../Images/song2.jpg";
@@ -59,10 +59,10 @@ function Home() {
   // Dynamic image states
   const images = [heroBg, heroBg2, heroBg3, heroBg4, heroBg5];
   const videos = [
-    { id: 1, image: thumbnail1, link: "BiUCuOI9Dfs", title: "Ankh Se Dur | Xain Zohaib" },
-    { id: 2, image: thumbnail2, link: "MQwCeQ7eOTs", title: "Hussain (a.s) Sa Koi Nahi | Zain Zohaib" },
-    { id: 3, image: thumbnail3, link: "1EtKQDDUQP8", title: "Qalandar | Zain Zohaib X Quratulain" },
-    { id: 4, image: thumbnail4, link: "CQiYuCwQa7M", title: "Rab ul Alameen | Rab ul Alameen" },
+    { id: 1, image: thumbnail1, link: "oyoQA1qhh0k", title: "Shukriya Hussain (A.S) | Imran Rahat" },
+    { id: 2, image: thumbnail2, link: "pVtn262X5VY", title: "Mein Wo Ali Hoon | Imran Rahat" },
+    { id: 3, image: thumbnail3, link: "EC1PDlRCtZ8", title: "Saadgi Toh Hamari | Imran Rahat" },
+    { id: 4, image: thumbnail4, link: "uJ2X7_r_Frw", title: "Dil Galti Kar Betha | Imran Rahat" },
   ];
 
   // Reference
