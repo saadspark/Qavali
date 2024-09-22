@@ -43,7 +43,7 @@
 }
 
 .play-btn {
-  background-color: #5400BC;
+  background-color: #000;
   color: #fff;
   border: none;
   padding: 12px 16px;
@@ -53,7 +53,7 @@
 }
 
 .play-btn:hover {
-  background-color: #7b00e3;
+  background-color: #2d2d2d;
 }
 
 /* Now Playing Bar */
@@ -64,7 +64,7 @@
   width: 100%;
   background-color: #fff;
   padding: 20px 25px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 -4px 10px rgba(123, 0, 227, 0.5);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 -4px 10px #2d2d2d;
   z-index: 10;
   display: flex;
   justify-content: space-between;
@@ -107,7 +107,7 @@
 }
 
 .progress {
-  background-color: #5400BC;
+  background-color: #000;
   height: 100%;
   width: 0;
   border-radius: 8px;
@@ -132,7 +132,7 @@
 }
 
 .control-btn {
-  background: linear-gradient(135deg, #5400BC, #7b00e3);
+  background: linear-gradient(135deg, #000, #757575);
   border: none;
   padding: 12px 16px;
   border-radius: 50%;
@@ -144,7 +144,7 @@
 
 .control-btn:hover {
   transform: scale(1.1);
-  background: linear-gradient(135deg, #7b00e3, #9b00ff);
+  background: linear-gradient(135deg, #757575, #000);
 }
 
 /* Volume Slider */
@@ -165,7 +165,7 @@
   appearance: none;
   width: 18px;
   height: 18px;
-  background-color: #5400BC;
+  background-color: #000;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -219,12 +219,22 @@
 
 /* Mobile design tweaks (below 480px) */
 @media screen and (max-width: 480px) {
+  .track-image img {
+    width: 75px;
+    height: 50px;
+  }
+  
   .now-playing {
     padding: 8px;
     flex-direction: column;
     padding-bottom: 20px;
   }
-
+  .now-playing.hidden {
+    width: 300%;
+    }
+    .toggle-now-playing-btn {
+      right: -66.7rem !important;
+    }
   .now-playing-image img {
     width: 50px;
     height: 50px;
@@ -263,7 +273,7 @@
 /* Position the toggle button on the left side of Now Playing */
 /* .toggle-now-playing-btn {
   background-color: transparent; 
-  color: #5400bc;
+  color: #000;
   border: none;
   font-size: 2rem; 
   cursor: pointer;
@@ -277,7 +287,7 @@
 .toggle-now-playing-btn {
   background-color: #fff;
   height: 50px;
-  color: #5400bc;
+  color: #000;
   border: none;
   font-size: 2rem;
   cursor: pointer;
@@ -287,7 +297,7 @@
   z-index: 15;
   transition: transform 0.3s, color 0.3s;
   top: 81.8%;
-  box-shadow: 0 4px 10px rgba(84, 0, 188, 0.5);
+  box-shadow: 0 4px 10px #2d2d2d;
 }
 
 button.toggle-now-playing-btn.now-playing-right {
@@ -302,7 +312,7 @@ button.toggle-now-playing-btn.now-playing-left {
   border-bottom-left-radius: 35px;
 }
 .toggle-now-playing-btn:hover {
-  color: #7b00e3; /* Darker purple on hover */
+  color: #2d2d2d; /* Darker purple on hover */
 }
 
 .toggle-now-playing-btn:active {
@@ -356,7 +366,7 @@ button.toggle-now-playing-btn.now-playing-left {
   width: 5px;
   height: 10px;
   margin: 0 2px;
-  background: #5400BC;
+  background: #000;
   border-radius: 50%;
   animation: wave 1s infinite ease-in-out;
 }

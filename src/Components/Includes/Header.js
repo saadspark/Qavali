@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import './Header.css'
 
 export default function Header() {
   return (
@@ -8,8 +9,7 @@ export default function Header() {
             <div className="row">
                 <div className="col-lg-2 col-md-2">
                     <div className="header__logo">
-                        {/* <Link to="/"><img src="./assets/img/logo.png" alt=""/></Link> */}
-                        <h2 className="mt-2" style={{fontWeight: "bold", color: "#fff"}}>TestLogo</h2>
+                        <Link to="/"><img className='logo' src="./assets/img/logo.png" alt=""/></Link>
                     </div>
                 </div>
                 <div className="col-lg-10 col-md-10">

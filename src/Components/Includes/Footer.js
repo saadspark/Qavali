@@ -1,5 +1,7 @@
 import React from 'react'
 import footerBg from '../../Images/footer-bg.png';
+import { Link } from 'react-router-dom';
+import './Footer.css'
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
@@ -26,7 +28,8 @@ export default function Footer() {
             </div>
             <div class="col-lg-4 offset-lg-1 col-md-6">
                 <div class="footer__social">
-                    <h2>TestLogo</h2>
+                <Link to="/"><img className="footer-logo" src="./assets/img/logo.png" alt=""/></Link>
+                    {/* <h2>TestLogo</h2> */}
                     <div class="footer__social__links">
                         <a href="#"><i class="fa fa-facebook"></i></a>
                         <a href="#"><i class="fa fa-twitter"></i></a>

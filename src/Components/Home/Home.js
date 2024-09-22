@@ -5,12 +5,12 @@ import heroBg2 from "../../Images/hero-bg2.png";
 import heroBg3 from "../../Images/hero-bg3.png";
 import heroBg4 from "../../Images/hero-bg4.png";
 import heroBg5 from "../../Images/hero-bg5.png";
-import aboutImage from "../../Images/about.webp";
+import aboutImage from "../../Images/about.jpg";
 import serviceOne from "../../Images/service-1.png";
 import serviceTwo from "../../Images/service-2.png";
 import serviceThree from "../../Images/service-3.png";
 import serviceFour from "../../Images/service-4.png";
-import serviceLeft from "../../Images/service-left.jpg";
+import serviceLeft from "../../Images/service-left.png";
 import trackRight from "../../Images/track-right.webp";
 import countdownBg from "../../Images/countdown-bg.jpg";
 import pianoImage from "../../Images/piano.png";
@@ -193,12 +193,8 @@ function Home() {
           <div className="row">
             <div className="col-lg-12">
               <div className="hero__text">
+                <h2 style={{color: "#fff", fontWeight: "bold"}}>Imran Rahat Ali Khan</h2>
                 <h1>Qawali Feel the heart beats</h1>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod <br />
-                  tempor incididunt ut labore et dolore magna aliqua.
-                </p>
                 <button
                   className="play-btn video-popup"
                   onClick={() => setOpen(true)}
@@ -272,7 +268,7 @@ function Home() {
             <div className="col-lg-6">
               <div className="about__text">
                 <div className="section-title">
-                  <h2>DJ Alexandra Rud</h2>
+                  <h2>Imran Rahat Ali Khan</h2>
                   <h1>About me</h1>
                 </div>
                 <p>
@@ -299,7 +295,7 @@ function Home() {
                 style={{ backgroundImage: `url(${serviceLeft})` }}
               >
                 <a
-                  href="https://www.youtube.com/watch?v=JGwWNGJdvx8"
+                  href="https://youtube.com/shorts/6dnLOA2g6LI?si=QeW8GC_qDHLlpncO"
                   className="play-btn video-popup"
                 >
                   <i className="fa fa-play"></i>
