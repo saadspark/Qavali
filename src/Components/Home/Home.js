@@ -390,6 +390,7 @@ function Home() {
               <h2>Youtube feed</h2>
               <h1>Latest videos</h1>
             </div>
+            <button className="view-more-btn">View More</button>
           </div>
         </div>
         {/* Video Modal */}

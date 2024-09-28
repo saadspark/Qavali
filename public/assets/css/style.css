@@ -273,7 +273,7 @@ ol {
 
 .header.header--normal {
 	position: relative;
-	background: #290849;
+	background: #000;
 }
 
 .header__logo {
@@ -442,6 +442,10 @@ ol {
 	z-index: 1;
 }
 
+.spacer {
+	margin-top: 30%;
+  }
+  
 .hero__text .play-btn i {
 	position: relative;
 	top: -11px;
@@ -1797,15 +1801,18 @@ ol {
 .videos__large__item .play-btn {
 	height: 50px;
 	width: 50px;
-	background: #5c00ce;
+	padding: 0px;
+	background: #fff;
 	border-radius: 50%;
 	font-size: 18px;
 	line-height: 50px;
 	text-align: center;
 	display: inline-block;
-	color: #ffffff;
+	color: #000;
 }
-
+.videos__large__item .play-btn:hover {
+	background: #c8c8c8;
+}
 .videos__large__item__text {
 	background: rgba(7, 14, 38, 0.7);
 	padding: 25px 30px 25px;
@@ -1863,13 +1870,17 @@ ol {
 .videos__item__pic .play-btn {
 	height: 40px;
 	width: 40px;
-	background: #5c00ce;
+	padding: 0px;
+	background: #fff;
 	border-radius: 50%;
 	font-size: 16px;
 	line-height: 40px;
 	text-align: center;
 	display: inline-block;
-	color: #ffffff;
+	color: #000;
+}
+.videos__item__pic .play-btn:hover {
+	background: #c8c8c8;
 }
 
 .videos__item__text {

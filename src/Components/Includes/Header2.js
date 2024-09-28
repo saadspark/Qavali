@@ -8,13 +8,7 @@ export default function Header2() {
         <div className="row">
           <div className="col-lg-2 col-md-2">
             <div className="header__logo">
-              {/* <a href="./index.html"><img src="img/logo.png" alt=""/></a> */}
-              <h2
-                className="mt-2"
-                style={{ fontWeight: "bold", color: "#fff" }}
-              >
-                TestLogo
-              </h2>
+            <Link to="/"><img className='logo' src="./assets/img/logo.png" alt=""/></Link>
             </div>
           </div>
           <div className="col-lg-10 col-md-10">
@@ -28,13 +22,13 @@ export default function Header2() {
                     <Link to="/about-us">About</Link>
                   </li>
                   <li>
-                    <Link to="">Tours</Link>
+                    <Link to="/youtube-feed">Videos</Link>
                   </li>
                   <li>
-                    <Link to="">Videos</Link>
+                  <li><Link to="/view-events">Events</Link></li>
                   </li>
                   <li>
-                    <a href="">Contact</a>
+                  <li><Link to="/contact-us">Contact</Link></li>
                   </li>
                 </ul>
               </nav>

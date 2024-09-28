@@ -18,9 +18,9 @@ export default function Header() {
                             <ul>
                                 <li className="active"><Link to="/">Home</Link></li>
                                 <li><Link to="/about-us">About</Link></li>
-                                <li><Link to="">Tours</Link></li>
-                                <li><Link to="">Videos</Link></li>
-                                <li><a href="">Contact</a></li>
+                                <li><Link to="/youtube-feed">Videos</Link></li>
+                                <li><Link to="/view-events">Events</Link></li>
+                                <li><Link to="/contact-us">Contact</Link></li>
                             </ul>
                         </nav>
                         <div className="header__right__social">

@@ -16,12 +16,12 @@ export default function Footer() {
                         <li>
                             <i class="fa fa-phone"></i>
                             <p>Phone</p>
-                            <h6>1-677-124-44227</h6>
+                            <h6>+92 300 6017604</h6>
                         </li>
                         <li>
                             <i class="fa fa-envelope"></i>
                             <p>Email</p>
-                            <h6>qawali@gmail.com</h6>
+                            <h6>imranaliqawwalofficial@gmail.com</h6>
                         </li>
                     </ul>
                 </div>
