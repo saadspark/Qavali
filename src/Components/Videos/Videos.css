@@ -1,0 +1,20 @@
+.videos__item {
+    width: 100%;
+  }
+  
+  @media (max-width: 768px) {
+    .videos__item {
+      margin: 10px 0; 
+    }
+  }
+  
+  .videos__item1 {
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .videos__item1 {
+      margin: 10px 0; 
+    }
+  }
+  

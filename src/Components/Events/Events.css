@@ -60,7 +60,8 @@ h2.event {
     }
   
     .event-card {
-      max-width: 90%;
+      /* max-width: 90%; */
+    width: calc(75% - 20px) !important;
     }
   }
 

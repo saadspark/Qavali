@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import OwlCarousel from "react-owl-carousel";
 import { Modal, Button } from "react-bootstrap";
 import "owl.carousel/dist/assets/owl.carousel.css";
@@ -18,6 +18,7 @@ import thumbnail14 from "../../Images/thumbnail14.jpg";
 import thumbnail15 from "../../Images/thumbnail15.jpg";
 import thumbnail16 from "../../Images/thumbnail16.jpg";
 import thumbnail17 from "../../Images/thumbnail17.jpg"; 
+import './Videos.css'
 
 const videos = [
     {
@@ -125,7 +126,6 @@ const videos = [
 
 const VideoSlider = () => {
   const [isOpen, setOpen] = useState(false);
-  const [show, setShow] = useState(false);
   const [currentVideo, setCurrentVideo] = useState(null);
 
   const handleClose = () => setShow(false);
@@ -134,6 +134,29 @@ const VideoSlider = () => {
     setShow(true);
   };
 
+  const [show, setShow] = useState(false);
+  const [itemsToShow, setItemsToShow] = useState(4); // Default to 4 items
+
+  // Function to update itemsToShow based on window width
+  const updateItemsToShow = () => {
+    if (window.innerWidth < 768) {
+      setItemsToShow(2); // Show 2 items on small screens
+    } else {
+      setItemsToShow(4); // Show 4 items on larger screens
+    }
+  };
+
+  useEffect(() => {
+    // Initial check
+    updateItemsToShow();
+    // Update itemsToShow on resize
+    window.addEventListener('resize', updateItemsToShow);
+
+    // Cleanup event listener on unmount
+    return () => {
+      window.removeEventListener('resize', updateItemsToShow);
+    };
+  }, []);
   return (
     <>
       <section class="videos spad">
@@ -233,67 +256,65 @@ const VideoSlider = () => {
                   </Modal.Body>
                 </Modal>
               </div>
-
               <div className="row">
-                <OwlCarousel
-                  className="videos__slider owl-carousel"
-                  items={4}
-                  margin={30}
-                  nav
-                  dots
-                  autoplay
-                  autoplayTimeout={3000}
-                  autoplayHoverPause={true}
-                  loop
+      <OwlCarousel
+        className="videos__slider owl-carousel"
+        items={itemsToShow} // Use the dynamic value here
+        margin={30}
+        nav
+        dots
+        autoplay
+        autoplayTimeout={3000}
+        autoplayHoverPause={true}
+        loop
+      >
+        {videos1.map((video1) => (
+          <div className="col-lg-3" key={video1.id}>
+            <div className="videos__item1">
+              <div
+                className="videos__item__pic set-bg"
+                style={{ backgroundImage: `url(${video1.image})` }}
+              >
+                <Button
+                  onClick={() => handleShow(video1.videoLink)}
+                  className="play-btn"
+                  variant="link"
                 >
-                  {videos1.map((video1) => (
-                    <div className="col-lg-3" key={video1.id}>
-                      <div className="videos__item">
-                        <div
-                          className="videos__item__pic set-bg"
-                          style={{ backgroundImage: `url(${video1.image})` }}
-                        >
-                          <Button
-                            onClick={() => handleShow(video1.videoLink)}
-                            className="play-btn"
-                            variant="link"
-                          >
-                            <i className="fa fa-play"></i>
-                          </Button>
-                        </div>
-                        <div className="videos__item__text">
-                          <h5>{video1.title}</h5>
-                          <ul>
-                            <li>{video1.duration}</li>
-                            <li>{video1.date}</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </OwlCarousel>
-
-                {/* Modal for showing video */}
-                <Modal show={show} onHide={handleClose} centered size="lg">
-                  <Modal.Header closeButton>
-                    <Modal.Title>Watch Video</Modal.Title>
-                  </Modal.Header>
-                  <Modal.Body>
-                    {currentVideo && (
-                      <div className="embed-responsive embed-responsive-16by9">
-                        <iframe
-                          className="embed-responsive-item"
-                          src={currentVideo.replace("watch?v=", "embed/")}
-                          allow="autoplay; encrypted-media"
-                          allowFullScreen
-                          title="YouTube video"
-                        ></iframe>
-                      </div>
-                    )}
-                  </Modal.Body>
-                </Modal>
+                  <i className="fa fa-play"></i>
+                </Button>
               </div>
+              <div className="videos__item__text">
+                <h5>{video1.title}</h5>
+                <ul>
+                  <li>{video1.duration}</li>
+                  <li>{video1.date}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        ))}
+      </OwlCarousel>
 
+      {/* Modal for showing video */}
+      <Modal show={show} onHide={handleClose} centered size="lg">
+        <Modal.Header closeButton>
+          <Modal.Title>Watch Video</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          {currentVideo && (
+            <div className="embed-responsive embed-responsive-16by9">
+              <iframe
+                className="embed-responsive-item"
+                src={currentVideo.replace("watch?v=", "embed/")}
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+                title="YouTube video"
+              ></iframe>
+            </div>
+          )}
+        </Modal.Body>
+      </Modal>
+    </div>
 
             </div>
           </div>
