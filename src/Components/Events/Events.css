@@ -63,3 +63,41 @@ h2.event {
       max-width: 90%;
     }
   }
+
+  .events {
+    padding: 20px;
+  }
+  
+  .events-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .event-card {
+    width: calc(33% - 20px); /* 3 cards in a row with some spacing */
+    margin-bottom: 20px;
+  }
+  
+  .event-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .view-more-btn {
+    display: block;
+    margin: 20px auto;
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .view-more-btn:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  

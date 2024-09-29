@@ -27,9 +27,6 @@ export default function Header2() {
                   <li>
                   <li><Link to="/view-events">Events</Link></li>
                   </li>
-                  <li>
-                  <li><Link to="/contact-us">Contact</Link></li>
-                  </li>
                 </ul>
               </nav>
               <div className="header__right__social">

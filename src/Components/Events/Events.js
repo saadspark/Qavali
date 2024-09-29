@@ -1,6 +1,5 @@
-import React from 'react'
-import Header2 from '../Includes/Header2'
-import Footer from '../Includes/Footer'
+import React, { useEffect, useState } from 'react'
+import countdownBg from "../../Images/countdown-bg.jpg";
 import event1 from "../../Images/event1.jpeg";
 import event2 from "../../Images/event2.jpeg";
 import event3 from "../../Images/event3.jpeg";
@@ -15,24 +14,39 @@ import event10 from "../../Images/event10.jpeg";
 import './Events.css'
 
 function Events() {
+    const [timeLeft, setTimeLeft] = useState({
+        days: 20,
+        hours: 45,
+        minutes: 18,
+        seconds: 9,
+      });
+
+      useEffect(() => {
+        const timerInterval = setInterval(() => {
+          setTimeLeft((prevTime) => {
+            let { days, hours, minutes, seconds } = prevTime;
+            if (seconds > 0) seconds -= 1;
+            else {
+              seconds = 59;
+              if (minutes > 0) minutes -= 1;
+              else {
+                minutes = 59;
+                if (hours > 0) hours -= 1;
+                else {
+                  hours = 23;
+                  if (days > 0) days -= 1;
+                  else clearInterval(timerInterval);
+                }
+              }
+            }
+            return { days, hours, minutes, seconds };
+          });
+        }, 1000);
+        return () => clearInterval(timerInterval);
+      }, []);
+
   return (
     <>
-    <Header2/>
-    <div class="breadcrumb-option">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="breadcrumb__links">
-                <a href="#">
-                  <i class="fa fa-home"></i> Home
-                </a>
-                <span>Events</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
 
       <section class="events">
     <h2 className="event">Upcoming Events</h2>
@@ -112,9 +126,45 @@ function Events() {
     </div>
   </section>
 
+  <section
+        className="countdown spad set-bg"
+        style={{ backgroundImage: `url(${countdownBg})` }}
+      >
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12">
+              <div className="countdown__text">
+                <h1>Tomorrowland 2020</h1>
+                <h4>Music festival starts in</h4>
+              </div>
+              <div className="countdown__timer" id="countdown-time">
+                <div className="countdown__item">
+                  <span>{timeLeft.days}</span>
+                  <p>days</p>
+                </div>
+                <div className="countdown__item">
+                  <span>{timeLeft.hours}</span>
+                  <p>hours</p>
+                </div>
+                <div className="countdown__item">
+                  <span>{timeLeft.minutes}</span>
+                  <p>minutes</p>
+                </div>
+                <div className="countdown__item">
+                  <span>{timeLeft.seconds}</span>
+                  <p>seconds</p>
+                </div>
+              </div>
+              <div className="buy__tickets">
+                <a href="#" className="primary-btn">
+                  Buy tickets
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-  <div class="spacer"></div>
-    <Footer/>
     </>
   )
 }

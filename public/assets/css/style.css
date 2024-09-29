@@ -880,7 +880,8 @@ ol {
 -----------------------*/
 
 .countdown {
-	padding-bottom: 560px;
+	/* padding-bottom: 560px; */
+	padding-bottom: 400px;
 }
 
 .countdown.countdown--page {

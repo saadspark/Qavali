@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Header2 from "../Includes/Header2";
 import OwlCarousel from "react-owl-carousel";
 import { Modal, Button } from "react-bootstrap";
 import "owl.carousel/dist/assets/owl.carousel.css";
@@ -19,7 +18,6 @@ import thumbnail14 from "../../Images/thumbnail14.jpg";
 import thumbnail15 from "../../Images/thumbnail15.jpg";
 import thumbnail16 from "../../Images/thumbnail16.jpg";
 import thumbnail17 from "../../Images/thumbnail17.jpg"; 
-import Footer from "../Includes/Footer";
 
 const videos = [
     {
@@ -138,30 +136,10 @@ const VideoSlider = () => {
 
   return (
     <>
-      <Header2 />
-
-      <div class="breadcrumb-option">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="breadcrumb__links">
-                <a href="#">
-                  <i class="fa fa-home"></i> Home
-                </a>
-                <span>Videos</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
       <section class="videos spad">
         <div class="container">
           <div class="row">
             <div class="col-lg-12">
-              <div class="section-title center-title">
-                <h2>YOutube feed</h2>
-                <h1>Latest videos</h1>
-              </div>
               <div>
                 <div
                   className="videos__large__item set-bg"
@@ -321,8 +299,6 @@ const VideoSlider = () => {
           </div>
         </div>
       </section>
-      <div class="spacer"></div>
-      <Footer />
     </>
   );
 };

@@ -13,8 +13,16 @@ import serviceFour from "../../Images/service-4.png";
 import serviceLeft from "../../Images/service-left.png";
 import trackRight from "../../Images/track-right.webp";
 import countdownBg from "../../Images/countdown-bg.jpg";
-import pianoImage from "../../Images/piano.png";
-import tablaImage from "../../Images/tabla.png";
+import event1 from "../../Images/event1.jpeg";
+import event2 from "../../Images/event2.jpeg";
+import event3 from "../../Images/event3.jpeg";
+import event4 from "../../Images/event4.jpeg";
+import event5 from "../../Images/event5.jpeg";
+import event6 from "../../Images/event6.jpeg";
+import event7 from "../../Images/event7.jpeg";
+import event8 from "../../Images/event8.jpeg";
+import event9 from "../../Images/event9.jpeg";
+import event10 from "../../Images/event10.jpeg";
 import instagramIcon from "../../Images/soical1.png";
 import spotifyIcon from "../../Images/soical2.png";
 import youtubeIcon from "../../Images/soical3.png";
@@ -41,6 +49,9 @@ import song2 from '../../music-files/2.mp3';
 import song3 from '../../music-files/3.mp3';
 import song4 from '../../music-files/4.mp3';
 import song5 from '../../music-files/5.mp3';
+import { Link } from "react-scroll";
+import VideoSlider from "../Videos/Videos";
+import BackToTopButton from "../Includes/BackToTopButton ";
 
 
 
@@ -49,6 +60,16 @@ function Home() {
   const [videoId, setVideoId] = useState("");
   const [isOpen, setOpen] = useState(false);
   const [isAnimated, setIsAnimated] = useState(false);
+  const [showSlider, setShowSlider] = useState(false); 
+  const [showAll, setShowAll] = useState(false);
+
+  const toggleSlider = () => {
+    setShowSlider(!showSlider); 
+  };
+  const toggleShowAll = () => {
+    setShowAll(!showAll);
+  };
+
   const [timeLeft, setTimeLeft] = useState({
     days: 20,
     hours: 45,
@@ -65,6 +86,19 @@ function Home() {
     { id: 4, image: thumbnail4, link: "uJ2X7_r_Frw", title: "Dil Galti Kar Betha | Imran Rahat" },
   ];
 
+  const events = [
+    { img: event1, date: '27th Aug 2024', location: 'Karachi, Pakistan' },
+    { img: event2, date: '16th Sep 2024', location: 'Faisalabad, Pakistan' },
+    { img: event3, date: '24th Aug 2024', location: 'Faisalabad, Pakistan' },
+    { img: event4, date: '31st Aug 2024', location: 'Islamabad, Pakistan' },
+    { img: event5, date: '15th Sep 2024', location: 'Faisalabad, Pakistan' },
+    { img: event6, date: '20th Sep 2024', location: 'Lahore, Pakistan' },
+    { img: event7, date: '17th Sep 2024', location: 'Lahore, Pakistan' },
+    { img: event8, date: '28th October 2024', location: 'Mankera, Pakistan' },
+    { img: event9, date: '12th Sep 2024', location: 'Gojra, Pakistan' },
+    { img: event10, date: '22nd Sep 2024', location: 'Lahore, Pakistan' },
+  ];
+
   // Reference
   const sliderRef = useRef(null);
 
@@ -77,30 +111,6 @@ function Home() {
     return () => clearInterval(intervalId);
   }, [images.length]);
 
-  // Countdown timer logic
-  useEffect(() => {
-    const timerInterval = setInterval(() => {
-      setTimeLeft((prevTime) => {
-        let { days, hours, minutes, seconds } = prevTime;
-        if (seconds > 0) seconds -= 1;
-        else {
-          seconds = 59;
-          if (minutes > 0) minutes -= 1;
-          else {
-            minutes = 59;
-            if (hours > 0) hours -= 1;
-            else {
-              hours = 23;
-              if (days > 0) days -= 1;
-              else clearInterval(timerInterval);
-            }
-          }
-        }
-        return { days, hours, minutes, seconds };
-      });
-    }, 1000);
-    return () => clearInterval(timerInterval);
-  }, []);
 
   // Intersection Observer for animation
   useEffect(() => {
@@ -152,27 +162,27 @@ function Home() {
   const musicTracks = [
     {
       title: 'David Guetta Miami Ultra Song 1',
-      url: song1, // Use imported file
+      url: song1,
       image: songImg1,
     },
     {
       title: 'David Guetta Miami Ultra Song 2',
-      url: song2, // Use imported file
+      url: song2, 
       image: songImg2,
     },
     {
       title: 'David Guetta Miami Ultra Song 3',
-      url: song3, // Use imported file
+      url: song3, 
       image: songImg3,
     },
     {
       title: 'David Guetta Miami Ultra Song 4',
-      url: song4, // Use imported file
+      url: song4, 
       image: songImg3,
     },
     {
       title: 'David Guetta Miami Ultra Song 5',
-      url: song5, // Use imported file
+      url: song5, 
       image: songImg3,
     },
   ];
@@ -189,7 +199,7 @@ function Home() {
           transition: "background-image 1s ease-in-out",
         }}
       >
-        <div className="container">
+          <div className="container">
           <div className="row">
             <div className="col-lg-12">
               <div className="hero__text">
@@ -212,20 +222,7 @@ function Home() {
             </div>
           </div>
         </div>
-          {/* {currentImageIndex === 0 && (
-            <div className="animate-image">
-              <img
-                className={`piano-left ${isAnimated ? "animate" : ""}`}
-                src={pianoImage}
-                alt="Piano"
-              />
-              <img
-                className={`tabla-right ${isAnimated ? "animate" : ""}`}
-                src={tablaImage}
-                alt="Tabla"
-              />
-            </div>
-          )} */}
+     
         <div className="social-icons">
           <div className="social-item">
             <img
@@ -257,7 +254,7 @@ function Home() {
         </div>
       </section>
       
-      <section className="about spad mt-5">
+      <section id="about-section" className="about spad mt-5">
         <div className="container">
           <div className="row">
             <div className="col-lg-6">
@@ -350,7 +347,7 @@ function Home() {
         </div>
       </section>
 
- <section className="track spad">
+ <section id="tracks-section" className="track spad">
       <div className="container">
         <div className="row">
           <div className="col-lg-7">
@@ -382,7 +379,7 @@ function Home() {
       </div>
     </section>
 
-      <section className="youtube spad">
+    <section id="youtube-feed" className="youtube spad">
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
@@ -390,9 +387,9 @@ function Home() {
               <h2>Youtube feed</h2>
               <h1>Latest videos</h1>
             </div>
-            <button className="view-more-btn">View More</button>
           </div>
         </div>
+
         {/* Video Modal */}
         <ModalVideo
           channel="youtube"
@@ -401,6 +398,7 @@ function Home() {
           videoId={videoId}
           onClose={() => setOpen(false)}
         />
+
         {/* Slider Container with ref */}
         <div className="youtube__slider" ref={sliderRef}>
           {videos.map((video) => (
@@ -422,48 +420,53 @@ function Home() {
             </div>
           ))}
         </div>
+
+        {/* Button to Show/Hide VideoSlider */}
+        <button className="view-more-btn" onClick={toggleSlider}>
+          {showSlider ? 'Show Less' : 'View All'}
+        </button>
+
+        {/* Conditional rendering for VideoSlider */}
+        {showSlider && <VideoSlider />}
+      </div>
+    </section>
+
+
+    <section id="events-section" className="events">
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-12">
+            <div className="section-title">
+              <h2>Upcoming Events</h2>
+              <h1>Latest Events</h1>
+            </div>
+          </div>
+          <div className="events-container">
+            {events.slice(0, showAll ? events.length : 3).map((event, index) => (
+              <div className="event-card" key={index}>
+                <img src={event.img} alt={`Event on ${event.date} at ${event.location}`} className="event-image" />
+                <div className="event-info">
+                  <p>Date: {event.date}</p>
+                  <p>Location: {event.location}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <button className="view-more-btn" onClick={toggleShowAll}>
+            {showAll ? 'Show Less' : 'View All'}
+          </button>
+        </div>
       </div>
     </section>
 
       <section
         className="countdown spad set-bg"
-        style={{ backgroundImage: `url(${countdownBg})` }}
+        // style={{ backgroundImage: `url(${countdownBg})` }}
       >
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="countdown__text">
-                <h1>Tomorrowland 2020</h1>
-                <h4>Music festival starts in</h4>
-              </div>
-              <div className="countdown__timer" id="countdown-time">
-                <div className="countdown__item">
-                  <span>{timeLeft.days}</span>
-                  <p>days</p>
-                </div>
-                <div className="countdown__item">
-                  <span>{timeLeft.hours}</span>
-                  <p>hours</p>
-                </div>
-                <div className="countdown__item">
-                  <span>{timeLeft.minutes}</span>
-                  <p>minutes</p>
-                </div>
-                <div className="countdown__item">
-                  <span>{timeLeft.seconds}</span>
-                  <p>seconds</p>
-                </div>
-              </div>
-              <div className="buy__tickets">
-                <a href="#" className="primary-btn">
-                  Buy tickets
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
       </section>
       <Footer />
+      <BackToTopButton />
+
     </>
   );
 }
