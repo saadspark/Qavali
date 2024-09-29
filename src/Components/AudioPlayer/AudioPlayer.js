@@ -67,14 +67,20 @@ const AudioPlayer = ({ tracks }) => {
     if (audioRef.current) {
       audioRef.current.volume = volume;
       animationRef.current = requestAnimationFrame(handleTimeUpdate);
-
+  
+      // Add event listener for the time update
+      audioRef.current.addEventListener("timeupdate", handleTimeUpdate);
+  
       return () => {
+        // Cleanup function
+        if (audioRef.current) {
+          audioRef.current.removeEventListener("timeupdate", handleTimeUpdate);
+        }
         cancelAnimationFrame(animationRef.current);
-        audioRef.current.removeEventListener("timeupdate", handleTimeUpdate);
       };
     }
   }, [currentTrack, volume]);
-
+  
   return (
     <div className="audio-player">
       <div className="track-list-container">
