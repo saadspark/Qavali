@@ -15,18 +15,16 @@
     vertical-align: middle;
   }
   
-  .header__nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
   .menu-btn {
-    display: none;
     font-size: 24px;
     background: #fff;
     border: none;
     cursor: pointer;
+    position: absolute;
+    right: 15px; /* Ensure the button is positioned correctly */
+    top: 50%; /* Vertically center the button */
+    transform: translateY(-50%); /* Adjust for vertical centering */
+    z-index: 10; /* Ensure it stays on top */
   }
   
   @media (max-width: 768px) {
@@ -48,7 +46,6 @@
     .header__nav {
       display: none;
       position: absolute;
-      /* top: 60px; */
       left: 0;
       width: 100%;
       background-color: #333;
