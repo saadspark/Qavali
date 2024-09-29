@@ -198,64 +198,65 @@ const VideoSlider = () => {
               </div>
 
               <div className="row">
-                <OwlCarousel
-                  className="videos__slider owl-carousel"
-                  items={4}
-                  margin={30}
-                  nav
-                  dots
-                  autoplay
-                  autoplayTimeout={3000}
-                  autoplayHoverPause={true}
-                  loop
-                >
-                  {videos.map((video) => (
-                    <div className="col-lg-3" key={video.id}>
-                      <div className="videos__item">
-                        <div
-                          className="videos__item__pic set-bg"
-                          style={{ backgroundImage: `url(${video.image})` }}
-                        >
-                          <Button
-                            onClick={() => handleShow(video.videoLink)}
-                            className="play-btn"
-                            variant="link"
-                          >
-                            <i className="fa fa-play"></i>
-                          </Button>
-                        </div>
-                        <div className="videos__item__text">
-                          <h5>{video.title}</h5>
-                          <ul>
-                            <li>{video.duration}</li>
-                            <li>{video.date}</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </OwlCarousel>
+      <OwlCarousel
+        className="videos__slider owl-carousel"
+        items={itemsToShow} // Use the dynamic value here
+        margin={30}
+        nav
+        dots
+        autoplay
+        autoplayTimeout={3000}
+        autoplayHoverPause={true}
+        loop
+      >
+     {videos.map((video1) => (
+  <div className="col-lg-3" key={video1.id}>
+    <div className="videos__item"> {/* Change this to use videos__item */}
+      <div
+        className="videos__item__pic set-bg"
+        style={{ backgroundImage: `url(${video1.image})` }}
+      >
+        <Button
+          onClick={() => handleShow(video1.videoLink)}
+          className="play-btn"
+          variant="link"
+        >
+          <i className="fa fa-play"></i>
+        </Button>
+      </div>
+      <div className="videos__item__text">
+        <h5>{video1.title}</h5>
+        <ul>
+          <li>{video1.duration}</li>
+          <li>{video1.date}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+))}
 
-                {/* Modal for showing video */}
-                <Modal show={show} onHide={handleClose} centered size="lg">
-                  <Modal.Header closeButton>
-                    <Modal.Title>Watch Video</Modal.Title>
-                  </Modal.Header>
-                  <Modal.Body>
-                    {currentVideo && (
-                      <div className="embed-responsive embed-responsive-16by9">
-                        <iframe
-                          className="embed-responsive-item"
-                          src={currentVideo.replace("watch?v=", "embed/")}
-                          allow="autoplay; encrypted-media"
-                          allowFullScreen
-                          title="YouTube video"
-                        ></iframe>
-                      </div>
-                    )}
-                  </Modal.Body>
-                </Modal>
-              </div>
+      </OwlCarousel>
+
+      {/* Modal for showing video */}
+      <Modal show={show} onHide={handleClose} centered size="lg">
+        <Modal.Header closeButton>
+          <Modal.Title>Watch Video</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          {currentVideo && (
+            <div className="embed-responsive embed-responsive-16by9">
+              <iframe
+                className="embed-responsive-item"
+                src={currentVideo.replace("watch?v=", "embed/")}
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+                title="YouTube video"
+              ></iframe>
+            </div>
+          )}
+        </Modal.Body>
+      </Modal>
+    </div>
               <div className="row">
       <OwlCarousel
         className="videos__slider owl-carousel"
@@ -268,31 +269,32 @@ const VideoSlider = () => {
         autoplayHoverPause={true}
         loop
       >
-        {videos1.map((video1) => (
-          <div className="col-lg-3" key={video1.id}>
-            <div className="videos__item1">
-              <div
-                className="videos__item__pic set-bg"
-                style={{ backgroundImage: `url(${video1.image})` }}
-              >
-                <Button
-                  onClick={() => handleShow(video1.videoLink)}
-                  className="play-btn"
-                  variant="link"
-                >
-                  <i className="fa fa-play"></i>
-                </Button>
-              </div>
-              <div className="videos__item__text">
-                <h5>{video1.title}</h5>
-                <ul>
-                  <li>{video1.duration}</li>
-                  <li>{video1.date}</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        ))}
+     {videos1.map((video1) => (
+  <div className="col-lg-3" key={video1.id}>
+    <div className="videos__item"> {/* Change this to use videos__item */}
+      <div
+        className="videos__item__pic set-bg"
+        style={{ backgroundImage: `url(${video1.image})` }}
+      >
+        <Button
+          onClick={() => handleShow(video1.videoLink)}
+          className="play-btn"
+          variant="link"
+        >
+          <i className="fa fa-play"></i>
+        </Button>
+      </div>
+      <div className="videos__item__text">
+        <h5>{video1.title}</h5>
+        <ul>
+          <li>{video1.duration}</li>
+          <li>{video1.date}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+))}
+
       </OwlCarousel>
 
       {/* Modal for showing video */}
