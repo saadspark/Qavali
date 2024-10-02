@@ -51,7 +51,7 @@ import song4 from '../../music-files/4.mp3';
 import song5 from '../../music-files/5.mp3';
 import { Link } from "react-scroll";
 import VideoSlider from "../Videos/Videos";
-import BackToTopButton from "../Includes/BackToTopButton ";
+import Gellery from "../Gellery/Gellery";
 
 
 
@@ -283,6 +283,7 @@ function Home() {
         </div>
       </section>
 
+<Gellery/>
       <section className="services">
         <div className="container-fluid">
           <div className="row">
@@ -324,7 +325,7 @@ function Home() {
                 <div className="col-lg-6 p-0 order-lg-4 col-md-6 order-md-4">
                   <div className="service__item deep-bg">
                     <img src={serviceThree} alt="" />
-                    <h4>DJ lessons</h4>
+                    <h4>Qawali night</h4>
                     <p>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                       sed do eiusmod.
@@ -365,16 +366,16 @@ function Home() {
           </div>
         </div>
         <div className="row">
-          <div className="col-lg-7 p-0">
+          <div className="col-lg-12 p-0">
             <div className="track__content nice-scroll">
             <AudioPlayer tracks={musicTracks} />
             </div>
           </div>
-          <div className="col-lg-5 p-0">
+          {/* <div className="col-lg-5 p-0">
             <div className="track__pic">
               <img src={trackRight} alt="Track Image" />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
@@ -465,7 +466,6 @@ function Home() {
       >
       </section>
       <Footer />
-      <BackToTopButton />
 
     </>
   );

@@ -41,7 +41,8 @@ const BackToTopButton = () => {
 const styles = {
   button: {
     position: 'fixed',
-    bottom: '30px',
+    // bottom: '30px',
+    bottom: '143px',
     right: '30px',
     backgroundColor: '#e5b852', 
     border: 'none',

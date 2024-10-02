@@ -18,7 +18,7 @@ function App() {
           <Route path="/youtube-feed" element={<Videos />} />
           <Route path="/view-events" element={<Events />} /> */}
         </Routes>
-        <BackToTopButton/> {/* Include the button here */}
+        <BackToTopButton/> 
       </BrowserRouter>
     </div>
   );
