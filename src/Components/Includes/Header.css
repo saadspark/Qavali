@@ -21,10 +21,11 @@
     border: none;
     cursor: pointer;
     position: absolute;
-    right: 15px; /* Ensure the button is positioned correctly */
-    top: 50%; /* Vertically center the button */
-    transform: translateY(-50%); /* Adjust for vertical centering */
-    z-index: 10; /* Ensure it stays on top */
+    right: 15px; 
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    display: none;
   }
   
   @media (max-width: 768px) {
