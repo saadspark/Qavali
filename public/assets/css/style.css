@@ -356,7 +356,7 @@ ol {
 .header__menu ul li a {
 	font-size: 15px;
 	text-transform: uppercase;
-	color: #ffffff;
+	color: #ffffff !important;
 	display: block;
 	padding: 6px 0;
 	position: relative;
