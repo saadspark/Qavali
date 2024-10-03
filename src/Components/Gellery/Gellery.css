@@ -1,5 +1,5 @@
 .custom-slider-container {
-    width: 80%;
+    width: 90%; /* Make container slightly wider for small screens */
     margin: 0 auto;
     padding: 20px 0;
   }
@@ -8,17 +8,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer; 
+    cursor: pointer;
   }
   
   .slider-image {
     width: 100%;
     height: auto;
-    transition: transform 0.3s ease-in-out; 
+    max-height: 300px; /* Limit height for small screens */
+    transition: transform 0.3s ease-in-out;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
-  
+
   .slider-image:hover {
     transform: scale(1.1); 
   }
@@ -68,18 +69,66 @@
   left: 4px; 
 }
 
-@media (max-width: 768px) {
-  .swiper-button-next,
-  .swiper-button-prev {
-    width: 35px;
-    height: 35px;
-  }
 
-  .swiper-button-next::after,
-  .swiper-button-prev::after {
-    font-size: 16px;
+@media (max-width: 768px) {
+    .custom-slider-container {
+      width: 95%;
+    }
+  
+    .slider-image {
+      max-height: 250px; /* Adjust height for smaller screens */
+    }
+  
+    .swiper-button-next,
+    .swiper-button-prev {
+      width: 40px;
+      height: 40px;
+    }
+  
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+      font-size: 16px;
+    }
+  
+    .modal-content {
+      max-width: 90%;
+      max-height: 85%; /* Increase modal size for better image view */
+    }
+  
+    .modal-close-button {
+      font-size: 20px;
+      top: 10px;
+      right: 10px;
+    }
   }
-}
+  
+
+  
+
+  @media (max-width: 480px) {
+    .custom-slider-container {
+      width: 98%;
+    }
+  
+    .slider-image {
+      max-height: 300px; /* Increase height further for small screens */
+    }
+  
+    .swiper-button-next,
+    .swiper-button-prev {
+      width: 35px;
+      height: 35px;
+    }
+  
+    .modal-content {
+      max-width: 95%;
+      max-height: 85%; /* Maximize modal size */
+    }
+  
+    .modal-close-button {
+      font-size: 18px;
+    }
+  }
 
   
   .modal-overlay {

@@ -37,7 +37,7 @@ export default function Gellery() {
 
   return (
     <div className="custom-slider-container">
-      <Swiper
+     <Swiper
         modules={[Autoplay, Pagination, Navigation]}
         spaceBetween={20}
         slidesPerView={3}
@@ -45,6 +45,17 @@ export default function Gellery() {
         pagination={{ clickable: true }}
         navigation
         loop={true}
+        breakpoints={{
+          320: {
+            slidesPerView: 1, // For small screens
+          },
+          640: {
+            slidesPerView: 2, // For medium screens
+          },
+          1024: {
+            slidesPerView: 3, // For large screens
+          }
+        }}
         className="custom-swiper"
       >
         {images.map((img, index) => (
