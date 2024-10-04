@@ -5,7 +5,6 @@ import heroBg2 from "../../Images/hero-bg2.png";
 import heroBg3 from "../../Images/hero-bg3.png";
 import heroBg4 from "../../Images/hero-bg4.png";
 import heroBg5 from "../../Images/hero-bg5.png";
-import aboutImage from "../../Images/about.jpg";
 import serviceOne from "../../Images/service-1.png";
 import serviceTwo from "../../Images/service-2.png";
 import serviceThree from "../../Images/service-3.png";
@@ -43,24 +42,23 @@ import AudioPlayer from "../AudioPlayer/AudioPlayer";
 import songImg1 from "../../Images/songImg1.jpg";
 import songImg2 from "../../Images/songImg2.jpg";
 
-import song1 from '../../music-files/1.mp3';
-import song2 from '../../music-files/2.mp3';
+import song1 from "../../music-files/1.mp3";
+import song2 from "../../music-files/2.mp3";
 import { Link } from "react-scroll";
 import VideoSlider from "../Videos/Videos";
 import Gellery from "../Gellery/Gellery";
-
-
+import ContactModal from "../ContactModal/ContactModal";
 
 function Home() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [videoId, setVideoId] = useState("");
   const [isOpen, setOpen] = useState(false);
   const [isAnimated, setIsAnimated] = useState(false);
-  const [showSlider, setShowSlider] = useState(false); 
+  const [showSlider, setShowSlider] = useState(false);
   const [showAll, setShowAll] = useState(false);
 
   const toggleSlider = () => {
-    setShowSlider(!showSlider); 
+    setShowSlider(!showSlider);
   };
   const toggleShowAll = () => {
     setShowAll(!showAll);
@@ -76,23 +74,43 @@ function Home() {
   // Dynamic image states
   const images = [heroBg, heroBg2, heroBg3, heroBg4, heroBg5];
   const videos = [
-    { id: 1, image: thumbnail1, link: "oyoQA1qhh0k", title: "Shukriya Hussain (A.S) | Imran Rahat" },
-    { id: 2, image: thumbnail2, link: "pVtn262X5VY", title: "Mein Wo Ali Hoon | Imran Rahat" },
-    { id: 3, image: thumbnail3, link: "EC1PDlRCtZ8", title: "Saadgi Toh Hamari | Imran Rahat" },
-    { id: 4, image: thumbnail4, link: "uJ2X7_r_Frw", title: "Dil Galti Kar Betha | Imran Rahat" },
+    {
+      id: 1,
+      image: thumbnail1,
+      link: "oyoQA1qhh0k",
+      title: "Shukriya Hussain (A.S) | Imran Rahat",
+    },
+    {
+      id: 2,
+      image: thumbnail2,
+      link: "pVtn262X5VY",
+      title: "Mein Wo Ali Hoon | Imran Rahat",
+    },
+    {
+      id: 3,
+      image: thumbnail3,
+      link: "EC1PDlRCtZ8",
+      title: "Saadgi Toh Hamari | Imran Rahat",
+    },
+    {
+      id: 4,
+      image: thumbnail4,
+      link: "uJ2X7_r_Frw",
+      title: "Dil Galti Kar Betha | Imran Rahat",
+    },
   ];
 
   const events = [
-    { img: event1, date: '27th Aug 2024', location: 'Karachi, Pakistan' },
-    { img: event2, date: '16th Sep 2024', location: 'Faisalabad, Pakistan' },
-    { img: event3, date: '24th Aug 2024', location: 'Faisalabad, Pakistan' },
-    { img: event4, date: '31st Aug 2024', location: 'Islamabad, Pakistan' },
-    { img: event5, date: '15th Sep 2024', location: 'Faisalabad, Pakistan' },
-    { img: event6, date: '20th Sep 2024', location: 'Lahore, Pakistan' },
-    { img: event7, date: '17th Sep 2024', location: 'Lahore, Pakistan' },
-    { img: event8, date: '28th October 2024', location: 'Mankera, Pakistan' },
-    { img: event9, date: '12th Sep 2024', location: 'Gojra, Pakistan' },
-    { img: event10, date: '22nd Sep 2024', location: 'Lahore, Pakistan' },
+    { img: event1, date: "27th Aug 2024", location: "Karachi, Pakistan" },
+    { img: event2, date: "16th Sep 2024", location: "Faisalabad, Pakistan" },
+    { img: event3, date: "24th Aug 2024", location: "Faisalabad, Pakistan" },
+    { img: event4, date: "31st Aug 2024", location: "Islamabad, Pakistan" },
+    { img: event5, date: "15th Sep 2024", location: "Faisalabad, Pakistan" },
+    { img: event6, date: "20th Sep 2024", location: "Lahore, Pakistan" },
+    { img: event7, date: "17th Sep 2024", location: "Lahore, Pakistan" },
+    { img: event8, date: "28th October 2024", location: "Mankera, Pakistan" },
+    { img: event9, date: "12th Sep 2024", location: "Gojra, Pakistan" },
+    { img: event10, date: "22nd Sep 2024", location: "Lahore, Pakistan" },
   ];
 
   // Reference
@@ -107,7 +125,6 @@ function Home() {
     return () => clearInterval(intervalId);
   }, [images.length]);
 
-
   // Intersection Observer for animation
   useEffect(() => {
     const handleIntersection = (entries) => {
@@ -116,7 +133,9 @@ function Home() {
       });
     };
 
-    const observer = new IntersectionObserver(handleIntersection, { threshold: 0.1 });
+    const observer = new IntersectionObserver(handleIntersection, {
+      threshold: 0.1,
+    });
     const socialIcons = document.querySelectorAll(".social-icon");
     const images = document.querySelectorAll(".piano-left, .tabla-right");
 
@@ -154,37 +173,34 @@ function Home() {
     setOpen(true);
   };
 
-  
   const musicTracks = [
     {
-      title: 'Kamli Wale - Imran Rahat Ali Khan',
+      title: "Kamli Wale - Imran Rahat Ali Khan",
       url: song1,
       image: songImg1,
     },
     {
-      title: 'Kamaal - Imran Rahat Ali Khan',
-      url: song2, 
+      title: "Kamaal - Imran Rahat Ali Khan",
+      url: song2,
       image: songImg2,
     },
     // {
     //   title: 'David Guetta Miami Ultra Song 3',
-    //   url: song3, 
+    //   url: song3,
     //   image: songImg3,
     // },
     // {
     //   title: 'David Guetta Miami Ultra Song 4',
-    //   url: song4, 
+    //   url: song4,
     //   image: songImg3,
     // },
     // {
     //   title: 'David Guetta Miami Ultra Song 5',
-    //   url: song5, 
+    //   url: song5,
     //   image: songImg3,
     // },
   ];
-  
-  
-  
+
   return (
     <>
       <Header />
@@ -195,11 +211,13 @@ function Home() {
           transition: "background-image 1s ease-in-out",
         }}
       >
-          <div className="container">
+        <div className="container">
           <div className="row">
             <div className="col-lg-12">
               <div className="hero__text">
-                <h2 style={{color: "#fff", fontWeight: "bold"}}>Imran Rahat Ali Khan</h2>
+                <h2 style={{ color: "#fff", fontWeight: "bold" }}>
+                  Imran Rahat Ali Khan
+                </h2>
                 <h1>Qawali Feel the heart beats</h1>
                 <button
                   className="play-btn video-popup"
@@ -218,7 +236,7 @@ function Home() {
             </div>
           </div>
         </div>
-     
+
         <div className="social-icons">
           <div className="social-item">
             <img
@@ -249,37 +267,12 @@ function Home() {
           <i className="fa fa-angle-double-down"></i>
         </div>
       </section>
-      
-      <section id="about-section" className="about spad mt-5">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-6">
-              <div className="about__pic">
-                <img src={aboutImage} alt="" />
-              </div>
-            </div>
-            <div className="col-lg-6">
-              <div className="about__text">
-                <div className="section-title">
-                  <h2>Imran Rahat Ali Khan</h2>
-                  <h1>About me</h1>
-                </div>
-                <p>
-                  DJ Rainflow knows how to move your mind, body and soul by
-                  delivering tracks that stand out from the norm. As if this
-                  impressive succession of high impact, floor-filling bombs
-                  wasn’t enough to sustain.
-                </p>
-                <a href="#" className="primary-btn">
-                  CONTACT ME
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-<Gellery/>
+      <>
+        <Gellery className="mt-5" />
+      </>
+      <>
+        <ContactModal />
+      </>
       <section className="services">
         <div className="container-fluid">
           <div className="row">
@@ -344,125 +337,128 @@ function Home() {
         </div>
       </section>
 
- <section id="tracks-section" className="track spad">
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-7">
-            <div className="section-title">
-              <h2>Latest tracks</h2>
-              <h1>Music podcast</h1>
+      <section id="tracks-section" className="track spad">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-7">
+              <div className="section-title">
+                <h2>Latest tracks</h2>
+                <h1>Music podcast</h1>
+              </div>
+            </div>
+            <div className="col-lg-5">
+              <div className="track__all">
+                <a href="#" className="primary-btn border-btn">
+                  View all tracks
+                </a>
+              </div>
             </div>
           </div>
-          <div className="col-lg-5">
-            <div className="track__all">
-              <a href="#" className="primary-btn border-btn">
-                View all tracks
-              </a>
+          <div className="row">
+            <div className="col-lg-12 p-0">
+              <div className="track__content nice-scroll">
+                <AudioPlayer tracks={musicTracks} />
+              </div>
             </div>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-lg-12 p-0">
-            <div className="track__content nice-scroll">
-            <AudioPlayer tracks={musicTracks} />
-            </div>
-          </div>
-          {/* <div className="col-lg-5 p-0">
+            {/* <div className="col-lg-5 p-0">
             <div className="track__pic">
               <img src={trackRight} alt="Track Image" />
             </div>
           </div> */}
-        </div>
-      </div>
-    </section>
-
-    <section id="youtube-feed" className="youtube spad">
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-12">
-            <div className="section-title">
-              <h2>Youtube feed</h2>
-              <h1>Latest videos</h1>
-            </div>
           </div>
         </div>
+      </section>
 
-        {/* Video Modal */}
-        <ModalVideo
-          channel="youtube"
-          autoplay
-          isOpen={isOpen}
-          videoId={videoId}
-          onClose={() => setOpen(false)}
-        />
+      <section id="youtube-feed" className="youtube spad">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12">
+              <div className="section-title">
+                <h2>Youtube feed</h2>
+                <h1>Latest videos</h1>
+              </div>
+            </div>
+          </div>
 
-        {/* Slider Container with ref */}
-        <div className="youtube__slider" ref={sliderRef}>
-          {videos.map((video) => (
-            <div className="youtube__item" key={video.id}>
-              <div
-                className="youtube__item__pic set-bg"
-                style={{ backgroundImage: `url(${video.image})` }}
-              >
-                <button
-                  className="play-btn video-popup"
-                  onClick={() => handleVideoClick(video.link)}
+          {/* Video Modal */}
+          <ModalVideo
+            channel="youtube"
+            autoplay
+            isOpen={isOpen}
+            videoId={videoId}
+            onClose={() => setOpen(false)}
+          />
+
+          {/* Slider Container with ref */}
+          <div className="youtube__slider" ref={sliderRef}>
+            {videos.map((video) => (
+              <div className="youtube__item" key={video.id}>
+                <div
+                  className="youtube__item__pic set-bg"
+                  style={{ backgroundImage: `url(${video.image})` }}
                 >
-                  <i className="fa fa-play"></i>
-                </button>
-              </div>
-              <div className="youtube__item__text">
-                <h4>{video.title}</h4>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Button to Show/Hide VideoSlider */}
-        <button className="view-more-btn" onClick={toggleSlider}>
-          {showSlider ? 'Show Less' : 'View All'}
-        </button>
-
-        {/* Conditional rendering for VideoSlider */}
-        {showSlider && <VideoSlider />}
-      </div>
-    </section>
-
-
-    <section id="events-section" className="events">
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-12">
-            <div className="section-title">
-              <h2>Upcoming Events</h2>
-              <h1>Latest Events</h1>
-            </div>
-          </div>
-          <div className="events-container">
-            {events.slice(0, showAll ? events.length : 3).map((event, index) => (
-              <div className="event-card" key={index}>
-                <img src={event.img} alt={`Event on ${event.date} at ${event.location}`} className="event-image" />
-                <div className="event-info">
-                  <p>Date: {event.date}</p>
-                  <p>Location: {event.location}</p>
+                  <button
+                    className="play-btn video-popup"
+                    onClick={() => handleVideoClick(video.link)}
+                  >
+                    <i className="fa fa-play"></i>
+                  </button>
+                </div>
+                <div className="youtube__item__text">
+                  <h4>{video.title}</h4>
                 </div>
               </div>
             ))}
           </div>
-          <button className="view-more-btn" onClick={toggleShowAll}>
-            {showAll ? 'Show Less' : 'View All'}
+
+          {/* Button to Show/Hide VideoSlider */}
+          <button className="view-more-btn" onClick={toggleSlider}>
+            {showSlider ? "Show Less" : "View All"}
           </button>
+
+          {/* Conditional rendering for VideoSlider */}
+          {showSlider && <VideoSlider />}
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section id="events-section" className="events">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12">
+              <div className="section-title">
+                <h2>Upcoming Events</h2>
+                <h1>Latest Events</h1>
+              </div>
+            </div>
+            <div className="events-container">
+              {events
+                .slice(0, showAll ? events.length : 3)
+                .map((event, index) => (
+                  <div className="event-card" key={index}>
+                    <img
+                      src={event.img}
+                      alt={`Event on ${event.date} at ${event.location}`}
+                      className="event-image"
+                    />
+                    <div className="event-info">
+                      <p>Date: {event.date}</p>
+                      <p>Location: {event.location}</p>
+                    </div>
+                  </div>
+                ))}
+            </div>
+            <button className="view-more-btn" onClick={toggleShowAll}>
+              {showAll ? "Show Less" : "View All"}
+            </button>
+          </div>
+        </div>
+      </section>
 
       <section
         className="countdown spad set-bg"
         // style={{ backgroundImage: `url(${countdownBg})` }}
-      >
-      </section>
+      ></section>
       <Footer />
-
     </>
   );
 }

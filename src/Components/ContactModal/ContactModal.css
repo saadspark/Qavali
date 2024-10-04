@@ -1,0 +1,122 @@
+/* Primary button */
+.primary-btn {
+    background-color: #e5b852;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 600; /* Bolder text */
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 30px; /* Rounded button for more modern look */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  }
+  
+  .primary-btn:hover {
+    background-color: #d4a632;
+    transform: scale(1.05); /* Slight scale on hover for better interaction */
+  }
+  
+  /* Modal content */
+  .modal-content {
+    border-radius: 15px;
+    color: white;
+    padding: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* More prominent shadow */
+    font-family: 'Rajdhani', sans-serif; /* Stylish font for modern look */
+  }
+  
+  /* Modal header */
+  .modal-header {
+    background-color: #e5b852;
+    color: white;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom: none;
+    font-size: 22px; /* Larger font for title */
+    font-weight: bold; /* Bold text for strong title */
+    padding: 15px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15); /* Shadow under header */
+    letter-spacing: 1px; /* Increase spacing for a more polished look */
+  }
+  
+  /* Modal body */
+  .modal-body {
+    font-size: 18px;
+    line-height: 1.6; /* Better line height for readability */
+    padding: 20px;
+    color: #f7f7f7; /* Light text for contrast on dark background */
+    background-color: #34495e; /* Darker color for body contrast */
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 400; /* Normal font weight for text */
+    letter-spacing: 0.5px; /* Slight letter spacing for better readability */
+  }
+  
+  /* Highlight important text */
+  .modal-body strong {
+    font-weight: 600; /* Stronger weight for emphasis */
+    color: #e5b852; /* Highlight important words with a gold color */
+  }
+  
+  .contact-modal-body p {
+    margin-bottom: 10px;
+    color: #fff;
+  }
+  
+  /* Modal footer */
+  .modal-footer {
+    border-top: none;
+    padding: 10px;
+    text-align: right;
+    font-size: 16px;
+  }
+  
+  /* Close button */
+  .modal-header .close {
+    color: white;
+    font-size: 24px;
+    opacity: 0.8;
+  }
+  
+  .modal-header .close:hover {
+    opacity: 1;
+  }
+  
+  /* Modal overlay */
+  .modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.7); /* Darker overlay */
+  }
+  
+  /* Center the modal vertically and horizontally */
+  .modal-dialog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Make sure modal is centered vertically */
+  }
+  
+  .modal-dialog-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Vertical centering */
+  }
+  
+  /* Improved animations for opening modal */
+  @keyframes modalFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .modal.fade.show .modal-dialog {
+    animation: modalFadeIn 0.4s ease-in-out;
+  }
+  
