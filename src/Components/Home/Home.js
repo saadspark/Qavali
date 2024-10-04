@@ -40,15 +40,11 @@ import thumbnail2 from "../../Images/thumbnail2.jpg";
 import thumbnail3 from "../../Images/thumbnail3.jpg";
 import thumbnail4 from "../../Images/thumbnail4.jpg";
 import AudioPlayer from "../AudioPlayer/AudioPlayer";
-import songImg1 from "../../Images/song1.jpg";
-import songImg2 from "../../Images/song2.jpg";
-import songImg3 from "../../Images/song3.jpg";
+import songImg1 from "../../Images/songImg1.jpg";
+import songImg2 from "../../Images/songImg2.jpg";
 
 import song1 from '../../music-files/1.mp3';
 import song2 from '../../music-files/2.mp3';
-import song3 from '../../music-files/3.mp3';
-import song4 from '../../music-files/4.mp3';
-import song5 from '../../music-files/5.mp3';
 import { Link } from "react-scroll";
 import VideoSlider from "../Videos/Videos";
 import Gellery from "../Gellery/Gellery";
@@ -161,30 +157,30 @@ function Home() {
   
   const musicTracks = [
     {
-      title: 'David Guetta Miami Ultra Song 1',
+      title: 'Kamli Wale - Imran Rahat Ali Khan',
       url: song1,
       image: songImg1,
     },
     {
-      title: 'David Guetta Miami Ultra Song 2',
+      title: 'Kamaal - Imran Rahat Ali Khan',
       url: song2, 
       image: songImg2,
     },
-    {
-      title: 'David Guetta Miami Ultra Song 3',
-      url: song3, 
-      image: songImg3,
-    },
-    {
-      title: 'David Guetta Miami Ultra Song 4',
-      url: song4, 
-      image: songImg3,
-    },
-    {
-      title: 'David Guetta Miami Ultra Song 5',
-      url: song5, 
-      image: songImg3,
-    },
+    // {
+    //   title: 'David Guetta Miami Ultra Song 3',
+    //   url: song3, 
+    //   image: songImg3,
+    // },
+    // {
+    //   title: 'David Guetta Miami Ultra Song 4',
+    //   url: song4, 
+    //   image: songImg3,
+    // },
+    // {
+    //   title: 'David Guetta Miami Ultra Song 5',
+    //   url: song5, 
+    //   image: songImg3,
+    // },
   ];
   
   
