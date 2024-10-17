@@ -21,7 +21,7 @@ export default function Footer() {
                         <li>
                             <i class="fa fa-envelope"></i>
                             <p>Email</p>
-                            <h6>imranaliqawwalofficial@gmail.com</h6>
+                            <h6>imranrahatalikhan@gmail.com</h6>
                         </li>
                     </ul>
                 </div>

@@ -92,12 +92,6 @@ function Home() {
       link: "EC1PDlRCtZ8",
       title: "Saadgi Toh Hamari | Imran Rahat",
     },
-    {
-      id: 4,
-      image: thumbnail4,
-      link: "uJ2X7_r_Frw",
-      title: "Dil Galti Kar Betha | Imran Rahat",
-    },
   ];
 
   const events = [
@@ -215,16 +209,16 @@ function Home() {
           <div className="row">
             <div className="col-lg-12">
               <div className="hero__text">
-                <h2 style={{ color: "#fff", fontWeight: "bold" }}>
+                <h1 style={{ color: "#fff", fontWeight: "bold" }}>
                   Imran Rahat Ali Khan
-                </h2>
-                <h1>Qawali Feel the heart beats</h1>
-                <button
+                </h1>
+                {/* <h1>Qawali Feel the heart beats</h1> */}
+                {/* <button
                   className="play-btn video-popup"
                   onClick={() => setOpen(true)}
                 >
                   <i className="fa fa-play"></i>
-                </button>
+                </button> */}
                 <ModalVideo
                   channel="youtube"
                   autoplay
@@ -239,27 +233,43 @@ function Home() {
 
         <div className="social-icons">
           <div className="social-item">
-            <img
-              className={`social-icon ${isAnimated ? "animate" : ""}`}
-              src={instagramIcon}
-              alt="Instagram"
-            />
+            <a
+              href="https://www.instagram.com/imranrahatalikhanofficial/"
+              target="blank"
+            >
+              <img
+                className={`social-icon ${isAnimated ? "animate" : ""}`}
+                src={instagramIcon}
+                alt="Instagram"
+              />
+            </a>
             <span>Instagram</span>
           </div>
           <div className="social-item">
-            <img
-              className={`social-icon ${isAnimated ? "animate" : ""}`}
-              src={spotifyIcon}
-              alt="Spotify"
-            />
+            <a
+              href="https://open.spotify.com/artist/27cPo0FY89RJ1N01IzwYC4"
+              target="blank"
+            >
+              <img
+                className={`social-icon ${isAnimated ? "animate" : ""}`}
+                src={spotifyIcon}
+                alt="Spotify"
+              />
+            </a>
+
             <span>Spotify</span>
           </div>
           <div className="social-item">
-            <img
-              className={`social-icon ${isAnimated ? "animate" : ""}`}
-              src={youtubeIcon}
-              alt="YouTube"
-            />
+            <a
+              href="https://www.youtube.com/channel/UCDGy0ojsg5KnEMgygjlm4Qg"
+              target="blank"
+            >
+              <img
+                className={`social-icon ${isAnimated ? "animate" : ""}`}
+                src={youtubeIcon}
+                alt="YouTube"
+              />
+            </a>
             <span>YouTube</span>
           </div>
         </div>
@@ -296,28 +306,28 @@ function Home() {
                     <img src={serviceOne} alt="" />
                     <h4>Wedding</h4>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod.
+                      Add a divine touch to your wedding with the soulful
+                      rhythms of Qawwali for a truly unforgettable celebration.
                     </p>
                   </div>
                 </div>
                 <div className="col-lg-6 p-0 order-lg-2 col-md-6 order-md-2">
                   <div className="service__item">
                     <img src={serviceTwo} alt="" />
-                    <h4>Clubs and bar</h4>
+                    <h4>Private Gatherings</h4>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod.
+                      Transform intimate moments with a captivating Qawwali
+                      performance, leaving lasting impressions on your guests.
                     </p>
                   </div>
                 </div>
                 <div className="col-lg-6 p-0 order-lg-4 col-md-6 order-md-4">
                   <div className="service__item deep-bg">
                     <img src={serviceThree} alt="" />
-                    <h4>Qawali night</h4>
+                    <h4>Qawwali night</h4>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod.
+                      Experience the spiritual melodies of a traditional Qawwali
+                      night, perfect for a soulful cultural evening.
                     </p>
                   </div>
                 </div>
@@ -326,8 +336,8 @@ function Home() {
                     <img src={serviceFour} alt="" />
                     <h4>Corporate events</h4>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod.
+                      Inspire your audience with an immersive Qawwali
+                      performance, blending tradition and artistic energy.
                     </p>
                   </div>
                 </div>

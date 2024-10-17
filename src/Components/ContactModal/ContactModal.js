@@ -22,7 +22,7 @@ const ContactModal = () => {
               <div className="about__text">
                 <div className="section-title">
                   <h2>Imran Rahat Ali Khan</h2>
-                  <h1>About Me</h1>
+                  {/* <h1>About Me</h1> */}
                 </div>
                 <p>
                   Imran Rahat Ali Khan is a renowned Qawali artist who knows how to mesmerize audiences
@@ -51,7 +51,7 @@ const ContactModal = () => {
               </div>
               <div className="contact-modal-body">
                 <p><strong>Phone:</strong><br/> +92 300 6017604</p>
-                <p><strong>Email:</strong><br/> imranaliqawwalofficial@gmail.com</p>
+                <p><strong>Email:</strong><br/> imranrahatalikhan@gmail.com</p>
               </div>
               <div className="modal-footer">
                 <button type="button" className="btn btn-secondary" onClick={handleClose}>
